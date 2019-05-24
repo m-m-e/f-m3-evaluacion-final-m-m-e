@@ -4,14 +4,20 @@ class CharacterDetails extends React.Component {
   render() { 
     const {match, characterData} = this.props;
     const id = parseInt(match.params.id);
-    const filteredCharacterData = characterData.find(item => item.id === id)
+    const character = characterData.find(item => item.id === id)
 
     return ( 
       <React.Fragment>
-        {filteredCharacterData ?
+        {character ?
           <div className="details">
-            <p>Hello I'm {filteredCharacterData.name}!</p>
-            <p>My id is{id}</p>
+            <img src={character.image} alt={character.name} className="character-image"/>
+            <h1 className="character-name">Nombre: {character.name}</h1>
+            <h2 className="character-house">Casa: {character.house}</h2>
+            <p className="character-birthyear">Año de nacimiento: {character.yearOfBirth}</p>
+            <p className="character-patronus">Patronus: {character.patronus}</p>
+            <p className="life-status">**Spoiler alert!** Estado: 
+            {character.alive === true ? ' Vivo!' : ' Muerto :('}
+            </p>
           </div>
         :
         <p>No tengo datos hasta ahora!</p>
