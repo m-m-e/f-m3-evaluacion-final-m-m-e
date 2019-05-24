@@ -6,8 +6,8 @@ class CharacterCard extends React.Component {
     return (
       <React.Fragment>
         <img src={item.image} alt={item.name} className="character-image"/>
-          <h2 className="character-name">{item.name}</h2>
-          <p className="character-house">{item.house}</p>
+        <h2 className="character-name">{item.name}</h2>
+        <p className="character-house">{item.house}</p>
       </React.Fragment>
     );
   }

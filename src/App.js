@@ -53,7 +53,7 @@ class App extends React.Component {
             </ul>
           </nav>
         </header>
-        <main>
+        <main className="main-content">
           <Switch>
             <Route 
               exact path="/" 
