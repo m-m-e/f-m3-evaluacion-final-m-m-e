@@ -3,6 +3,13 @@
 .main-title {
   color: $color-silver;
   text-align: center;
+  font-size: $font-med;
+  @media all and (min-width: 768px){
+    font-size: $font-lg;
+  }
+  @media all and (min-width: 1024px){
+    font-size: $font-xlg;
+  }
 }
 
 .filters {

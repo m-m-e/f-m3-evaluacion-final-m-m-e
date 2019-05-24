@@ -67,7 +67,7 @@ class App extends React.Component {
         <header className="header">
           <nav className="menu">
             <ul className="menu-list">
-              <Link to="/">Home</Link>
+              <Link className="menu-link" to="/">Home</Link>
             </ul>
           </nav>
         </header>

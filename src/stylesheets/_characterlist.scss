@@ -6,14 +6,24 @@
   margin-top: 50px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 10px;
+  @media all and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media all and (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media all and (min-width: 1440px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .character-link {
-  border: 5px solid $color-silver;
+  border: 2px solid $color-silver;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 350px;
+  max-width: 280px;
 }

@@ -6,7 +6,7 @@ class CharacterDetails extends React.Component {
   }
 
   render() { 
-    const {match, characterData} = this.props;
+    const {match, characterData, showHouse} = this.props;
     const id = parseInt(match.params.id);
     const character = characterData.find(item => item.id === id)
 
@@ -16,7 +16,7 @@ class CharacterDetails extends React.Component {
           <div className="details">
             <img src={character.image} alt={character.name} className="character-image"/>
             <h1 className="character-name">Nombre: {character.name}</h1>
-            <h2 className="character-house">Casa: {character.house}</h2>
+            {character.house ? <img src={showHouse(character)} alt={character.house} className="character-house" /> : <p>Sin casa en Hogwarts!</p>}
             <p className="character-birthyear">Año de nacimiento: {character.yearOfBirth}</p>
             <p className="character-patronus">Patronus: {character.patronus}</p>
             <p className="life-status">**Spoiler alert!** Estado: 
