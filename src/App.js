@@ -3,8 +3,7 @@ import './App.css';
 import './components/CharacterList';
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
-
-const apiUrl = 'http://hp-api.herokuapp.com/api/characters';
+import { fetchData } from './services/FetchData';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,17 +13,16 @@ class App extends React.Component {
       characterData: [],
       filterName: ''
     }
-    this.fetchData = this.fetchData.bind(this);
+    this.getData = this.getData.bind(this);
     this.handleNameFilter = this.handleNameFilter.bind(this);
   }
 
   componentDidMount() {
-    this.fetchData();
+    this.getData();
   }
 
-  fetchData() {
-    fetch(apiUrl)
-      .then(response => response.json())
+  getData() {
+    fetchData()
       .then(data => {
         const newData = data.map((item, index) => {
           return {...item, id: index}
