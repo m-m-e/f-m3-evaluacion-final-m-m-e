@@ -36,7 +36,9 @@ class App extends React.Component {
           {characterData.map(item => {
             return (
               <li className="character__list-item" key={item.id}>
+                <img src={item.image} alt={item.name} className="character-image"/>
                 <h1 className="character-name">{item.name}</h1>
+                <p className="character-house">{item.house}</p>
               </li>
             )
           })}
