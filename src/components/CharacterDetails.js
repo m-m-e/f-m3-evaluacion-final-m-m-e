@@ -24,15 +24,23 @@ class CharacterDetails extends React.Component {
               className="details-character-house" 
               />
               :
-              <p>No Hogwarts house!</p>
+              null
               }
+
               <h1 className="details-character-name">Name: {character.name}</h1>
+
+              {character.birthyear ?
               <p className="character-birthyear">Birth year: {character.yearOfBirth}</p>
+              :
+              <p className="character-birthyear">Birth year: Unknown/ none</p>
+              }
+
               {character.patronus ?
               <p className="character-patronus">Patronus: {character.patronus}</p>
               :
               <p className="character-patronus">Patronus: Unknown/ none</p>              
               }
+
               <p className="life-status">Status:  
               {character.alive === true ? 
               <i className="fas fa-heart"/> 
@@ -40,6 +48,7 @@ class CharacterDetails extends React.Component {
               <i className="fas fa-skull-crossbones"/>
               }
               </p>
+              
               <small className="key">KEY: Alive <i className="fas fa-heart"/> Dead <i className="fas fa-skull-crossbones"/></small>
             </div>
           </div>
