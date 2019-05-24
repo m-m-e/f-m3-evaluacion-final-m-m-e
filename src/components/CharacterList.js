@@ -12,7 +12,7 @@ class CharacterList extends React.Component {
           .map(item => {
             return (
               <li className="character__list-item" key={item.id}>
-                <Link to={`/characterdetail/:${item.id}`}>
+                <Link to={`/characterdetails/:${item.id}`}>
                   <CharacterCard item={item} />
                 </Link>
               </li>
