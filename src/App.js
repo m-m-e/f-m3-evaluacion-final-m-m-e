@@ -1,9 +1,9 @@
 import React from 'react';
+import Home from './components/Home';
 import './App.css';
 import './components/CharacterList';
-import CharacterList from './components/CharacterList';
-import Filters from './components/Filters';
 import { fetchData } from './services/FetchData';
+import { Link, Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,8 +40,18 @@ class App extends React.Component {
     const {characterData, filterName} = this.state;
     return (
       <div className="App">
-        <Filters handleNameFilter={this.handleNameFilter}/>
-        <CharacterList characterData={characterData} filterName={filterName}/>
+        <header className="header">
+          <nav className="menu">
+            <ul className="menu-list">
+              <Link to="/">Home</Link>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <Switch>
+            <Route exact path="/" render={() => (<Home characterData={characterData} filterName={filterName} handleNameFilter={this.handleNameFilter}/>)} />
+          </Switch>
+        </main>
       </div>
     );
   }
