@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './components/Home';
 import CharacterDetails from './components/CharacterDetails';
-import './App.scss';
+import './stylesheets/App.scss';
 import './components/CharacterList';
 import { fetchData } from './services/FetchData';
 import { Link, Route, Switch } from 'react-router-dom';

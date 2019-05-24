@@ -20,7 +20,9 @@ evaluacion-final
     │   ├── characterdetails.scss
     │   ├── characterlist.scss
     │   ├── home.scss
-    │   └── variables.scss
+    │   ├── variables.scss
+    │   ├── App.scss
+    │   └── index.scss
     ├── components
     │   ├── CharacterCard.js
     │   ├── CharacterDetails.js
@@ -28,9 +30,7 @@ evaluacion-final
     │   ├── Filters.js
     │   └── Home.js
     ├── App.js
-    ├── App.scss
-    ├── index.js
-    └── index.scss
+    └── index.js
 ```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
