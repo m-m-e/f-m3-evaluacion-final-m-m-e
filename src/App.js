@@ -8,9 +8,11 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      characterData: []
+      characterData: [],
+      filterName: ''
     }
     this.fetchData = this.fetchData.bind(this);
+    this.handleNameFilter = this.handleNameFilter.bind(this);
   }
 
   componentDidMount() {
@@ -28,10 +30,16 @@ class App extends React.Component {
       })
   }
 
+  handleNameFilter(event) {
+    const input = event.currentTarget.value;
+    this.setState({filterName: input});
+  }
+
   render() {
     const {characterData} = this.state;
     return (
       <div className="App">
+        <input type="text" className="filter-character" onChange={this.handleNameFilter}/>
         <ul className="character__list">
           {characterData.map(item => {
             return (
