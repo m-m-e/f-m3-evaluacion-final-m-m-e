@@ -19,11 +19,17 @@
   }
 }
 
+.character__list-item {
+  display: flex;
+  justify-content: center;
+}
+
 .character-link {
   border: 2px solid $color-silver;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 350px;
+  width: 100%;
   max-width: 280px;
 }

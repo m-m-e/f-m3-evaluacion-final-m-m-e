@@ -5,7 +5,8 @@ class Filters extends React.Component {
     const {handleNameFilter, filterName} = this.props;
     return ( 
       <div className="filters">
-        <input type="text" className="filter-character" value={filterName} onChange={handleNameFilter}/>
+        <label className="filter-character-label" htmlFor="filter-character">Filter by character here:</label>
+        <input type="text" className="filter-character" if="filter-character" value={filterName} onChange={handleNameFilter}/>
       </div>
     );
   }

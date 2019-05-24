@@ -9,7 +9,7 @@ class CharacterCard extends React.Component {
         <img src={item.image} alt={item.name} className="character-image"/>
         <div className="character-info">
           <h2 className="character-name">{item.name}</h2>
-          {item.house ? <img src={showHouse(item)} alt={item.house} className="character-house" /> : <p>Sin casa en Hogwarts!</p>}
+          {item.house ? <img src={showHouse(item)} alt={item.house} className="character-house" /> : <p>No Hogwarts house!</p>}
         </div>
       </React.Fragment>
     );
