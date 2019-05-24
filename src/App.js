@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import './components/CharacterList';
 import CharacterList from './components/CharacterList';
+import Filters from './components/Filters';
 
 const apiUrl = 'http://hp-api.herokuapp.com/api/characters';
 
@@ -41,7 +42,7 @@ class App extends React.Component {
     const {characterData, filterName} = this.state;
     return (
       <div className="App">
-        <input type="text" className="filter-character" onChange={this.handleNameFilter}/>
+        <Filters handleNameFilter={this.handleNameFilter}/>
         <CharacterList characterData={characterData} filterName={filterName}/>
       </div>
     );
