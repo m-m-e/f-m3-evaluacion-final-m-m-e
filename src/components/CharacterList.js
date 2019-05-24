@@ -5,7 +5,7 @@ import '../stylesheets/_characterlist.scss';
 
 class CharacterList extends React.Component {
   render() { 
-    const {characterData, filterName} = this.props;
+    const {characterData, filterName, showHouse} = this.props;
     return (
       <ul className="character__list">
           {characterData
@@ -14,7 +14,7 @@ class CharacterList extends React.Component {
             return (
               <li className="character__list-item" key={item.id}>
                 <Link className="character-link" to={`/characterdetails/${item.id}`}>
-                  <CharacterCard item={item} />
+                  <CharacterCard item={item} showHouse={showHouse} />
                 </Link>
               </li>
             )

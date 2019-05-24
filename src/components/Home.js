@@ -5,12 +5,12 @@ import '../stylesheets/_home.scss';
 
 class Home extends React.Component {
   render() {
-    const {characterData, filterName, handleNameFilter} = this.props; 
+    const {characterData, filterName, handleNameFilter, showHouse} = this.props; 
     return ( 
       <React.Fragment>
         <h1 className="main-title">Harry Potter Characters <i className="fas fa-quidditch"></i></h1>
         <Filters filterName={filterName} handleNameFilter={handleNameFilter}/>
-        <CharacterList characterData={characterData} filterName={filterName}/>
+        <CharacterList characterData={characterData} filterName={filterName} showHouse={showHouse}/>
       </React.Fragment>
     );
   }
