@@ -1,0 +1,34 @@
+@import './variables';
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 280px;
+  border: 2px solid $color-silver;
+  color: $color-white;
+  font-size: $font-smed;
+}
+
+.details-character-name {
+  font-size: $font-med;
+  padding: 10px;
+}
+
+.details-character-image {
+  padding: 10px;
+  width: 75%;
+  align-self: center;
+}
+
+.details-character-house {
+  margin: 10px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  align-self: center;
+}
+
+.details-character-info {
+  padding: 10px;
+}
