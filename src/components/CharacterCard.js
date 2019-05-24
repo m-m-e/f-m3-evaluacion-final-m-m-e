@@ -1,4 +1,6 @@
 import React from 'react';
+import '../stylesheets/_charactercard.scss';
+import gryff from '../images/gryffindor.jpg';
 
 class CharacterCard extends React.Component {
   render() { 
@@ -8,7 +10,7 @@ class CharacterCard extends React.Component {
         <img src={item.image} alt={item.name} className="character-image"/>
         <div className="character-info">
           <h2 className="character-name">{item.name}</h2>
-          {item.house ? <p className="character-house">{item.house}</p> : <p>No tiene casa en Hogwarts!</p>}
+          {item.house ? <img src={gryff} alt={item.house} className="character-house" /> : <p>Sin casa en Hogwarts!</p>}
         </div>
       </React.Fragment>
     );
