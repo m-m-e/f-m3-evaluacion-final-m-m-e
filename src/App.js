@@ -10,7 +10,6 @@ class App extends React.Component {
     this.state = {
       characterData: []
     }
-
     this.fetchData = this.fetchData.bind(this);
   }
 
@@ -26,13 +25,22 @@ class App extends React.Component {
           return {...item, id: index}
         });
         this.setState({characterData: newData})
-      }
-      )
+      })
   }
 
   render() {
+    const {characterData} = this.state;
     return (
       <div className="App">
+        <ul className="character__list">
+          {characterData.map(item => {
+            return (
+              <li className="character__list-item" key={item.id}>
+                <h1 className="character-name">{item.name}</h1>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     );
   }
