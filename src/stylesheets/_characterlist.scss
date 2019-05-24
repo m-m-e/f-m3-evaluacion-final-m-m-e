@@ -19,6 +19,19 @@
 }
 
 .character-image {
-  width: 50%;
+  height: 50%;
   padding-top: 20px;
+}
+
+.character-info {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.character-house {
+  margin: 0;
 }
