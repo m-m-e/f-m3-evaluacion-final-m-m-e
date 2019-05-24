@@ -20,7 +20,7 @@ class CharacterDetails extends React.Component {
             <p className="character-birthyear">Año de nacimiento: {character.yearOfBirth}</p>
             <p className="character-patronus">Patronus: {character.patronus}</p>
             <p className="life-status">**Spoiler alert!** Estado: 
-            {character.alive === true ? ' Vivo!' : ' Muerto :('}
+            {character.alive === true ? <i className="fas fa-heart"/> : <i className="fas fa-skull-crossbones"/>}
             </p>
           </div>
         :
