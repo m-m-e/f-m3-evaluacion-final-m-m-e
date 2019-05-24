@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import './components/CharacterList';
+import CharacterList from './components/CharacterList';
 
 const apiUrl = 'http://hp-api.herokuapp.com/api/characters';
 
@@ -40,19 +42,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <input type="text" className="filter-character" onChange={this.handleNameFilter}/>
-        <ul className="character__list">
-          {characterData
-          .filter(item => item.name.includes(filterName))
-          .map(item => {
-            return (
-              <li className="character__list-item" key={item.id}>
-                <img src={item.image} alt={item.name} className="character-image"/>
-                <h1 className="character-name">{item.name}</h1>
-                <p className="character-house">{item.house}</p>
-              </li>
-            )
-          })}
-        </ul>
+        <CharacterList characterData={characterData} filterName={filterName}/>
       </div>
     );
   }
