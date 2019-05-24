@@ -4,16 +4,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
   min-width: 280px;
   border: 2px solid $color-silver;
   color: $color-white;
   font-size: $font-smed;
   @media all and (min-width: 768px) {
-    margin: 30px;
+    margin: auto;
     box-sizing: border-box;
     flex-direction: row;
     min-width: 700px;
+    max-width: 1000px;
   }
 }
 
