@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './components/Home';
+import CharacterDetails from './components/CharacterDetails';
 import './App.css';
 import './components/CharacterList';
 import { fetchData } from './services/FetchData';
@@ -49,7 +50,24 @@ class App extends React.Component {
         </header>
         <main>
           <Switch>
-            <Route exact path="/" render={() => (<Home characterData={characterData} filterName={filterName} handleNameFilter={this.handleNameFilter}/>)} />
+            <Route 
+              exact path="/" 
+              render={() => (
+                <Home 
+                  characterData={characterData} 
+                  filterName={filterName} 
+                  handleNameFilter={this.handleNameFilter}
+                />
+              )} 
+            />
+            <Route 
+              path="/characterdetails/:id" 
+              render={routerProps =>(
+                <CharacterDetails 
+                  match={routerProps.match}
+                  characterData={characterData}
+                />
+            )}/>
           </Switch>
         </main>
       </div>
