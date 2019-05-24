@@ -36,12 +36,14 @@ class App extends React.Component {
   }
 
   render() {
-    const {characterData} = this.state;
+    const {characterData, filterName} = this.state;
     return (
       <div className="App">
         <input type="text" className="filter-character" onChange={this.handleNameFilter}/>
         <ul className="character__list">
-          {characterData.map(item => {
+          {characterData
+          .filter(item => item.name.includes(filterName))
+          .map(item => {
             return (
               <li className="character__list-item" key={item.id}>
                 <img src={item.image} alt={item.name} className="character-image"/>
