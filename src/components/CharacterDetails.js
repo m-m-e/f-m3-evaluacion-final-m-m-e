@@ -1,6 +1,10 @@
 import React from 'react';
 
 class CharacterDetails extends React.Component {
+  componentWillUnmount() {
+    this.props.clearFilter();
+  }
+
   render() { 
     const {match, characterData} = this.props;
     const id = parseInt(match.params.id);

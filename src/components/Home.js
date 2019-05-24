@@ -7,7 +7,7 @@ class Home extends React.Component {
     const {characterData, filterName, handleNameFilter} = this.props; 
     return ( 
       <React.Fragment>
-        <Filters handleNameFilter={handleNameFilter}/>
+        <Filters filterName={filterName} handleNameFilter={handleNameFilter}/>
         <CharacterList characterData={characterData} filterName={filterName}/>
       </React.Fragment>
     );

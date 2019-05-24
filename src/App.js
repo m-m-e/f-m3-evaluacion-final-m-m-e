@@ -16,6 +16,7 @@ class App extends React.Component {
     }
     this.getData = this.getData.bind(this);
     this.handleNameFilter = this.handleNameFilter.bind(this);
+    this.clearFilter = this.clearFilter.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +36,10 @@ class App extends React.Component {
   handleNameFilter(event) {
     const input = event.currentTarget.value;
     this.setState({filterName: input});
+  }
+
+  clearFilter() {
+    this.setState({filterName: ''});
   }
 
   render() {
@@ -66,6 +71,7 @@ class App extends React.Component {
                 <CharacterDetails 
                   match={routerProps.match}
                   characterData={characterData}
+                  clearFilter={this.clearFilter}
                 />
             )}/>
           </Switch>
