@@ -4,21 +4,29 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 280px;
+  min-width: 280px;
   border: 2px solid $color-silver;
   color: $color-white;
   font-size: $font-smed;
+  @media all and (min-width: 768px) {
+    margin: 50px;
+    box-sizing: border-box;
+    flex-direction: row;
+  }
 }
 
 .details-character-name {
   font-size: $font-med;
-  padding: 10px;
 }
 
 .details-character-image {
   padding: 10px;
   width: 75%;
+  max-width: 300px;
   align-self: center;
+  @media all and (min-width: 768px) {
+    max-height: 400px;
+  }
 }
 
 .details-character-house {
@@ -27,8 +35,18 @@
   width: 60px;
   border-radius: 50%;
   align-self: center;
+  @media all and (min-width: 768px) {
+    align-self: flex-end;
+  }
 }
 
 .details-character-info {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.key {
+  color: $color-silver;
 }

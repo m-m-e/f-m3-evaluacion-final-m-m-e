@@ -16,17 +16,17 @@ class CharacterDetails extends React.Component {
         {character ?
           <div className="details">
             <img src={character.image} alt={character.name} className="details-character-image"/>
-            <h1 className="details-character-name">Name: {character.name}</h1>
-            {character.house ? 
-            <img 
+            <div className="details-character-info">
+              {character.house ? 
+              <img 
               src={showHouse(character)} 
               alt={character.house} 
               className="details-character-house" 
-            />
-            :
-            <p>No Hogwarts house!</p>
-            }
-            <div className="details-character-info">
+              />
+              :
+              <p>No Hogwarts house!</p>
+              }
+              <h1 className="details-character-name">Name: {character.name}</h1>
               <p className="character-birthyear">Birth year: {character.yearOfBirth}</p>
               {character.patronus ?
               <p className="character-patronus">Patronus: {character.patronus}</p>
@@ -40,8 +40,8 @@ class CharacterDetails extends React.Component {
               <i className="fas fa-skull-crossbones"/>
               }
               </p>
+              <small className="key">KEY: Alive <i className="fas fa-heart"/> Dead <i className="fas fa-skull-crossbones"/></small>
             </div>
-            <small className="key">KEY: Alive <i className="fas fa-heart"/> Dead <i className="fas fa-skull-crossbones"/></small>
           </div>
         :
         <p>I'm sorry, I don't have any info right now!</p>
