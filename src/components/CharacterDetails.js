@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/_characterdetails.scss';
+import PropTypes from 'prop-types';
 
 class CharacterDetails extends React.Component {
   componentWillUnmount() {
@@ -32,7 +33,7 @@ class CharacterDetails extends React.Component {
               {character.birthyear ?
               <p className="character-birthyear">Birth year: {character.yearOfBirth}</p>
               :
-              <p className="character-birthyear">Birth year: Unknown/ none</p>
+              <p className="character-birthyear">Birth year: Unknown</p>
               }
 
               {character.patronus ?
@@ -48,7 +49,7 @@ class CharacterDetails extends React.Component {
               <i className="fas fa-skull-crossbones"/>
               }
               </p>
-              
+
               <small className="key">KEY: Alive <i className="fas fa-heart"/> Dead <i className="fas fa-skull-crossbones"/></small>
             </div>
           </div>
@@ -61,5 +62,12 @@ class CharacterDetails extends React.Component {
     );
   }
 }
+
+CharacterDetails.propTypes = {
+  match: PropTypes.object, 
+  characterData: PropTypes.array, 
+  showHouse: PropTypes.func,
+  clearFilter: PropTypes.func
+};
  
 export default CharacterDetails;

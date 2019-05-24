@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/_charactercard.scss';
+import PropTypes from 'prop-types';
 
 class CharacterCard extends React.Component {
   render() { 
@@ -15,5 +16,10 @@ class CharacterCard extends React.Component {
     );
   }
 }
- 
+
+CharacterCard.propTypes = {
+  item: PropTypes.object,
+  showHouse: PropTypes.func
+};
+
 export default CharacterCard;

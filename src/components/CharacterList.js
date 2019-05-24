@@ -2,6 +2,7 @@ import React from 'react';
 import CharacterCard from './CharacterCard';
 import {Link} from 'react-router-dom';
 import '../stylesheets/_characterlist.scss';
+import PropTypes from 'prop-types';
 
 class CharacterList extends React.Component {
   render() { 
@@ -23,5 +24,11 @@ class CharacterList extends React.Component {
     );
   }
 }
+
+CharacterList.propTypes = {
+  characterData: PropTypes.array,
+  filterName: PropTypes.string,
+  showHouse: PropTypes.func
+};
  
 export default CharacterList;
