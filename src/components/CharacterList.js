@@ -8,12 +8,12 @@ class CharacterList extends React.Component {
   render() { 
     const {characterData, filterName, showHouse} = this.props;
     return (
-      <ul className="character__list">
+      <ul className="character-list">
           {characterData
           .filter(item => item.name.toLowerCase().includes(filterName.toLowerCase()))
           .map(item => {
             return (
-              <li className="character__list-item" key={item.id}>
+              <li className="character-list-item" key={item.id}>
                 <Link className="character-link" to={`/characterdetails/${item.id}`}>
                   <CharacterCard item={item} showHouse={showHouse} />
                 </Link>

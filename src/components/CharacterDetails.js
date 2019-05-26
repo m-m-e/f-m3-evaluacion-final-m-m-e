@@ -18,29 +18,19 @@ class CharacterDetails extends React.Component {
           <div className="details">
             <img src={character.image} alt={character.name} className="details-character-image"/>
             <div className="details-character-info">
-              {character.house ? 
-              <img 
-              src={showHouse(character)} 
-              alt={character.house} 
-              className="details-character-house" 
-              />
-              :
-              null
+              {character.house && 
+                <img 
+                src={showHouse(character)} 
+                alt={character.house} 
+                className="details-character-house" 
+                />
               }
 
               <h1 className="details-character-name">Name: {character.name}</h1>
 
-              {character.birthyear ?
-              <p className="character-birthyear">Birth year: {character.yearOfBirth}</p>
-              :
-              <p className="character-birthyear">Birth year: Unknown</p>
-              }
+              <p className="character-birthyear">Birth year: {character.yearOfBirth || 'Unknown'}</p>
 
-              {character.patronus ?
-              <p className="character-patronus">Patronus: {character.patronus}</p>
-              :
-              <p className="character-patronus">Patronus: Unknown/ none</p>              
-              }
+              <p className="character-patronus">Patronus: {character.patronus || 'Unknown/none'}</p>
 
               <p className="life-status">Status:  
               {character.alive === true ? 
@@ -54,10 +44,8 @@ class CharacterDetails extends React.Component {
             </div>
           </div>
         :
-        <p>I'm sorry, I don't have any info right now!</p>
-
+        <p className="error-message">I'm sorry, I don't have any info right now!</p>
         }
-
       </React.Fragment>
     );
   }

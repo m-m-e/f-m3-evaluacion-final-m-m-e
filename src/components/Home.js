@@ -8,11 +8,11 @@ class Home extends React.Component {
   render() {
     const {characterData, filterName, handleNameFilter, showHouse} = this.props; 
     return ( 
-      <React.Fragment>
+      <div className="home">
         <h1 className="main-title">Harry Potter Characters <i className="fas fa-quidditch"></i></h1>
         <Filters filterName={filterName} handleNameFilter={handleNameFilter}/>
         <CharacterList characterData={characterData} filterName={filterName} showHouse={showHouse}/>
-      </React.Fragment>
+      </div>
     );
   }
 }
