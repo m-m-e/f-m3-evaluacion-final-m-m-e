@@ -11,6 +11,7 @@ class Home extends React.Component {
       <div className="home">
         <h1 className="main-title">Harry Potter Characters <i className="fas fa-quidditch"></i></h1>
         <Filters filterName={filterName} handleNameFilter={handleNameFilter}/>
+        <p className="main-subtitle">Click on a character for more information!</p>
         <CharacterList characterData={characterData} filterName={filterName} showHouse={showHouse}/>
       </div>
     );
