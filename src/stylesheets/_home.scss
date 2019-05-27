@@ -13,32 +13,4 @@
       font-size: $font-xlg;
     }
   }
-  
-  .filters {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .filter-character {
-    height: 20px;
-    width: 250px;
-    @media all and (min-width: 768px){
-      width: 500px;
-      height: 30px;
-    }
-  }
-  
-  .filter-character-label {
-    color: $color-white;
-    font-size: $font-sm;
-    @media all and (min-width: 768px) {
-      font-size: $font-med;
-    }
-  }
-
-  .checkbox-container {
-    color: $color-white;
-  }
 }

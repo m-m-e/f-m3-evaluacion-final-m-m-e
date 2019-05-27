@@ -19,6 +19,7 @@ evaluacion-final
     │   ├── charactercard.scss
     │   ├── characterdetails.scss
     │   ├── characterlist.scss
+    │   ├── filters.scss
     │   ├── home.scss
     │   ├── variables.scss
     │   ├── App.scss
