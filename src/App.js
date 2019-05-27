@@ -16,11 +16,13 @@ class App extends React.Component {
 
     this.state = {
       characterData: [],
-      filterName: ''
+      filterName: '',
+      filterHouses: []
     }
     this.getData = this.getData.bind(this);
     this.handleNameFilter = this.handleNameFilter.bind(this);
     this.clearFilter = this.clearFilter.bind(this);
+    this.handleHouseFilter = this.handleHouseFilter.bind(this);
   }
 
   componentDidMount() {
@@ -59,9 +61,32 @@ class App extends React.Component {
     }
   }
 
+  handleHouseFilter(event) {
+    const target = event.currentTarget;
+    const id = target.id;
+    if (this.state.filterHouses.indexOf(id) < 0) {
+      this.setState(prevState => {
+        const newArr = [...prevState.filterHouses, id];
+        console.log(newArr);
+        return (
+          {filterHouses: newArr}
+        )
+      })
+    } else {
+      this.setState(prevState => {
+        const house = this.state.filterHouses.indexOf(id);
+        const newArr = [...prevState.filterHouses];
+        newArr.splice(house, 1);
+        return(
+          {filterHouses: newArr}
+        )
+      })
+    }
+  }
+
   render() {
-    const {characterData, filterName} = this.state;
-    const {handleNameFilter, showHouse} = this;
+    const {characterData, filterName, filterHouses} = this.state;
+    const {handleNameFilter, showHouse, handleHouseFilter} = this;
     return (
       <div className="app">
         <header className="header">
@@ -81,6 +106,8 @@ class App extends React.Component {
                   filterName={filterName} 
                   handleNameFilter={handleNameFilter}
                   showHouse={showHouse}
+                  filterHouses={filterHouses}
+                  handleHouseFilter={handleHouseFilter}
                 />
               )} 
             />
