@@ -67,7 +67,6 @@ class App extends React.Component {
     if (this.state.filterHouses.indexOf(id) < 0) {
       this.setState(prevState => {
         const newArr = [...prevState.filterHouses, id];
-        console.log(newArr);
         return (
           {filterHouses: newArr}
         )
