@@ -15,6 +15,7 @@ class Home extends React.Component {
           handleNameFilter={handleNameFilter}
           handleHouseFilter={handleHouseFilter}
         />
+        <p className="main-subtitle">Click on a character for more information!</p>
         <CharacterList 
           characterData={characterData} 
           filterName={filterName} 

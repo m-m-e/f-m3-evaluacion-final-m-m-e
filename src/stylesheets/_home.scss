@@ -1,9 +1,10 @@
 @import './variables';
 
 .home {
+  color: $color-silver;
+  text-align: center;
+
   .main-title {
-    color: $color-silver;
-    text-align: center;
     font-size: $font-med;
     padding-bottom: 25px;
     @media all and (min-width: 768px){
