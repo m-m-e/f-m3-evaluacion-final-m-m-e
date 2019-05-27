@@ -37,5 +37,8 @@
     @media all and (min-width: 1024px) {
       font-size: $font-smed;
     }
+    & :hover {
+      color: $color-golden;
+    }
   }
 }
