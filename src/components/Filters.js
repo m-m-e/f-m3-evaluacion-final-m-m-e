@@ -13,9 +13,9 @@ class Filters extends React.Component {
         <div className="select-container">
           <label htmlFor="gender">Filter by gender here: </label>
           <select name="gender" id="gender" onChange={handleGenderFilter}>
-            <option value="All">All</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+            <option value="all">all</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
           </select>
         </div>
 

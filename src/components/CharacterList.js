@@ -12,7 +12,7 @@ class CharacterList extends React.Component {
           {characterData
           .filter(item => item.name.toLowerCase().includes(filterName.toLowerCase()))
           .filter(item => filterHouses.length > 0 ? filterHouses.includes(item.house.toLowerCase()) : true)
-          .filter(item => filterGender.length > 0 && !filterGender.includes('all') ? filterGender.includes(item.gender) : true)
+          .filter(item => filterGender !== 'all'? filterGender === item.gender : true)
           .map(item => {
             return (
               <li className="character-list-item" key={item.id}>

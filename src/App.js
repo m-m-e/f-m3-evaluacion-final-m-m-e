@@ -18,7 +18,7 @@ class App extends React.Component {
       characterData: [],
       filterName: '',
       filterHouses: [],
-      filterGender: []
+      filterGender: 'all'
     }
     this.getData = this.getData.bind(this);
     this.handleNameFilter = this.handleNameFilter.bind(this);
@@ -88,24 +88,7 @@ class App extends React.Component {
   handleGenderFilter(event){
     const target = event.currentTarget;
     const genderToShow = target.value.toLowerCase();
-    if (this.state.filterGender.indexOf(genderToShow) < 0) {
-      this.setState({filterGender: genderToShow});
-      this.setState(prevState => {
-        const newArr = [...prevState.filterGender, genderToShow];
-        return (
-          {filterGender: newArr}
-        )
-      })
-    } else {
-      this.setState(prevState => {
-        const gender = this.state.filterGender.indexOf(genderToShow);
-        const newArr = [...prevState.filterGender];
-        newArr.splice(gender, 1);
-        return(
-          {filterGender: newArr}
-        )
-      })
-    }
+    this.setState({filterGender: genderToShow});
   }
 
   render() {
