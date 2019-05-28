@@ -4,11 +4,20 @@ import '../stylesheets/_filters.scss';
 
 class Filters extends React.Component {
   render() { 
-    const {handleNameFilter, filterName, handleHouseFilter} = this.props;
+    const {handleNameFilter, filterName, handleHouseFilter, handleGenderFilter} = this.props;
     return ( 
       <div className="filters">
         <label className="filter-character-label" htmlFor="filter-character">Filter by character here:</label>
         <input type="text" className="filter-character" if="filter-character" value={filterName} onChange={handleNameFilter}/>
+
+        <div className="select-container">
+          <label htmlFor="gender">Filter by gender here: </label>
+          <select name="gender" id="gender" onChange={handleGenderFilter}>
+            <option value="All">All</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
 
         <div className="checkbox-container">
           <p className="checkbox-subtitle">Filter by house here:</p>

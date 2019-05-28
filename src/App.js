@@ -17,12 +17,14 @@ class App extends React.Component {
     this.state = {
       characterData: [],
       filterName: '',
-      filterHouses: []
+      filterHouses: [],
+      filterGender: []
     }
     this.getData = this.getData.bind(this);
     this.handleNameFilter = this.handleNameFilter.bind(this);
     this.clearFilter = this.clearFilter.bind(this);
     this.handleHouseFilter = this.handleHouseFilter.bind(this);
+    this.handleGenderFilter = this.handleGenderFilter.bind(this);
   }
 
   componentDidMount() {
@@ -83,9 +85,32 @@ class App extends React.Component {
     }
   }
 
+  handleGenderFilter(event){
+    const target = event.currentTarget;
+    const genderToShow = target.value.toLowerCase();
+    if (this.state.filterGender.indexOf(genderToShow) < 0) {
+      this.setState({filterGender: genderToShow});
+      this.setState(prevState => {
+        const newArr = [...prevState.filterGender, genderToShow];
+        return (
+          {filterGender: newArr}
+        )
+      })
+    } else {
+      this.setState(prevState => {
+        const gender = this.state.filterGender.indexOf(genderToShow);
+        const newArr = [...prevState.filterGender];
+        newArr.splice(gender, 1);
+        return(
+          {filterGender: newArr}
+        )
+      })
+    }
+  }
+
   render() {
-    const {characterData, filterName, filterHouses} = this.state;
-    const {handleNameFilter, showHouse, handleHouseFilter} = this;
+    const {characterData, filterName, filterHouses, filterGender} = this.state;
+    const {handleNameFilter, showHouse, handleHouseFilter, handleGenderFilter} = this;
     return (
       <div className="app">
         <header className="header">
@@ -107,6 +132,8 @@ class App extends React.Component {
                   showHouse={showHouse}
                   filterHouses={filterHouses}
                   handleHouseFilter={handleHouseFilter}
+                  filterGender={filterGender}
+                  handleGenderFilter={handleGenderFilter}
                 />
               )} 
             />

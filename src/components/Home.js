@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 class Home extends React.Component {
   render() {
-    const {characterData, filterName, handleNameFilter, showHouse, filterHouses, handleHouseFilter} = this.props; 
+    const {characterData, filterName, handleNameFilter, showHouse, filterHouses, handleHouseFilter, filterGender, handleGenderFilter} = this.props; 
     return ( 
       <div className="home">
         <h1 className="main-title">Harry Potter Characters <i className="fas fa-quidditch"></i></h1>
@@ -14,13 +14,15 @@ class Home extends React.Component {
           filterName={filterName} 
           handleNameFilter={handleNameFilter}
           handleHouseFilter={handleHouseFilter}
-        />
+          handleGenderFilter={handleGenderFilter}
+          />
         <p className="main-subtitle">Click on a character for more information!</p>
         <CharacterList 
           characterData={characterData} 
           filterName={filterName} 
           showHouse={showHouse}
           filterHouses={filterHouses}
+          filterGender={filterGender}
         />
       </div>
     );

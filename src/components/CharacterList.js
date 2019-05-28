@@ -6,12 +6,13 @@ import PropTypes from 'prop-types';
 
 class CharacterList extends React.Component {
   render() { 
-    const {characterData, filterName, showHouse, filterHouses} = this.props;
+    const {characterData, filterName, showHouse, filterHouses, filterGender} = this.props;
     return (
       <ul className="character-list">
           {characterData
           .filter(item => item.name.toLowerCase().includes(filterName.toLowerCase()))
           .filter(item => filterHouses.length > 0 ? filterHouses.includes(item.house.toLowerCase()) : true)
+          .filter(item => filterGender.length > 0 && !filterGender.includes('all') ? filterGender.includes(item.gender) : true)
           .map(item => {
             return (
               <li className="character-list-item" key={item.id}>
